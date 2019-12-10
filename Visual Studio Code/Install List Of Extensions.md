@@ -1,5 +1,8 @@
 # Install List Of Extensions
 
+## Language Pack
+- Chinese (Traditional) Language Pack for Visual Studio Code 
+
 ## Docker
 - Docker
 
@@ -8,6 +11,9 @@
 
 ## JavaScript
 - ESLint
+
+## Vue.js
+- Vetur
 
 ## Markdown
 - Markdown All in One
