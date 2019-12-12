@@ -8,8 +8,8 @@ docker run -d --name <Name> --ip <Container NAT IP> -p 1433:1433 -e sa_password=
 ```
 For example:
 ```
-docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w0rD -e ACCEPT_EULA
-=Y microsoft/mssql-server-windows-express
+docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w0rD -e ACCEPT_EULA=Y 
+microsoft/mssql-server-windows-express
 ```
 
 Please note that assign a **static IP address** to container, otherwise IP address of container will be dynamic and changed after you restart container.  
@@ -39,8 +39,8 @@ docker run -d --name <Name> --ip <Container NAT IP> -p 1433:1433 -e sa_password=
 
 For example:
 ```
-docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w0rD -e ACCEPT_EULA
-=Y -v C:/DockerVolume/mysql/backup/:C:/backup/ microsoft/mssql-server-windows-express
+docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w0rD -e ACCEPT_EULA=Y 
+-v C:/DockerVolume/mssql/backup/:C:/backup/ microsoft/mssql-server-windows-express
 ```
 
 It will be able to access backup file when you restore database on SSMS.
