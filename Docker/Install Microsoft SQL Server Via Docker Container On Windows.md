@@ -44,3 +44,13 @@ docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w
 ```
 
 It will be able to access backup file when you restore database on SSMS.
+
+## Remark
+Microsoft doesn't provide the offical image of SQL Server 2019. If you want to work SQL Server on **Windows Server 2019**, you can install by KingKong Bruce's images.
+
+```
+docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w0rD -e ACCEPT_EULA=Y 
+-v C:/DockerVolume/mssql/backup/:C:/backup/ kkbruce/mssql-server-windows-express:windowsservercore-1903
+```
+
+Reference: [SQL SERVER WINDOWS CONTAINER之WINDOWS SERVER 2019 V1809, V1903版](https://blog.kkbruce.net/2019/09/sql-server-windows-server-2019-container.html#.XqwV9KgzZdg)
