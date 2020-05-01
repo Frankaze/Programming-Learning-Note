@@ -1,4 +1,5 @@
 # Ruby Install Fails By RVM
+
 ## Issue
 
 Fails to install Ruby by RVM on macOS 10.13 High Sierra. The error message in installation log shows:
@@ -7,6 +8,7 @@ Fails to install Ruby by RVM on macOS 10.13 High Sierra. The error message in in
 Error: Could not create /usr/local/Cellar
 Check you have permission to write to /usr/local
 ```
+
 ## Cause
 
 RVM install Ruby via Homebrew. User needs permission to create or access `/usr/local/Cellar`. Because macOS 10.13 High Sierra does't allow user to chown `/usr/local`, both of the following shells don't work:

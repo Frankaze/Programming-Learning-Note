@@ -1,13 +1,16 @@
 # Install Microsoft SQL Server Express Via Docker Container On Windows
+
 ## Installation
 
 Switch your Docker into Windows containers. Install Microsoft SQL Server Express via following command.
 
-```
+```docker
 docker run -d --name <Name> --ip <Container NAT IP> -p 1433:1433 -e sa_password=<Password> -e ACCEPT_EULA=Y microsoft/mssql-server-windows-express
 ```
+
 For example:
-```
+
+```docker
 docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w0rD -e ACCEPT_EULA=Y 
 microsoft/mssql-server-windows-express
 ```
@@ -23,22 +26,28 @@ Make sure the **Password** follow the default policy, or you will not login serv
 
 ## Find Out IP Address Of Server
 Use the below command to find out the IP address of server in Docker container.
-```
+
+```docker
 docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <Name>
 ```
 
 ## Restore Database By SQL Server Management Studio
+
 Using Docker volume to move database backup file into container. 
-```
+
+```docker
 docekr run -it <Name> -v <Local Folder Path>:<Container Folder Path>
 ```
+
 Or add volume mapping when installing SQL Server via following command. 
-```
+
+```docker
 docker run -d --name <Name> --ip <Container NAT IP> -p 1433:1433 -e sa_password=<Password> -e ACCEPT_EULA=Y -v <Local Folder Path>:<Container Folder Path> microsoft/mssql-server-windows-express
 ```
 
 For example:
-```
+
+```docker
 docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w0rD -e ACCEPT_EULA=Y 
 -v C:/DockerVolume/mssql/backup/:C:/backup/ microsoft/mssql-server-windows-express
 ```
@@ -46,9 +55,10 @@ docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w
 It will be able to access backup file when you restore database on SSMS.
 
 ## Remark
+
 Microsoft doesn't provide the offical image of SQL Server 2019. If you want to work SQL Server on **Windows Server 2019**, you can install by KingKong Bruce's images.
 
-```
+```docker
 docker run -d --name mssql --ip 172.17.131.152 -p 1433:1433 -e sa_password=P@55w0rD -e ACCEPT_EULA=Y 
 -v C:/DockerVolume/mssql/backup/:C:/backup/ kkbruce/mssql-server-windows-express:windowsservercore-1903
 ```
