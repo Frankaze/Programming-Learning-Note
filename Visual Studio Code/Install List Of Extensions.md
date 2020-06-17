@@ -1,30 +1,26 @@
 # Install List Of Extensions
 
-## Language Pack
-
-- Chinese (Traditional) Language Pack for Visual Studio Code 
+## Coding
+- Code Spell Checker
+- Prettier - Code formatter
 
 ## Docker
-
 - Docker
 
-## Version Control System
-
-- GitLens
-
-## JavaScript
-
-- ESLint
-
-## Vue.js
-
-- Vetur
-
 ## Markdown
-
 - Markdown All in One
 - Markdown Preview Github Styling
 
-## Themes
+## JavaScript
+- ESLint
 
+## Theme
+- Chinese (Traditional) Language Pack for Visual Studio Code
 - vscode-icons
+
+## Version Control System
+- GitLens
+- Git History
+
+## Vue.js
+- Vetur
