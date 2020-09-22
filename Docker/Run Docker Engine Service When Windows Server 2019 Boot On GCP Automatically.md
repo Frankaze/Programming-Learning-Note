@@ -2,7 +2,7 @@
 
 ## Issue
 
-使用 GDP 架設 Windows Server 2019，即便於**服務**設定將 Docker Engine 設定成**自動**，Docker 依然無法自動啟動，一旦系統重新開機必須手動至**服務**啟動 Docker Engine。
+使用 GDP 架設 Windows Server 2019，即便於**服務**設定將 **Docker Engine** 設定成**自動**，Docker 依然無法自動啟動，一旦系統重新開機，管理員必須手動至**服務**啟動 **Docker Engine**。
 
 ## Cause
 
@@ -10,7 +10,7 @@
 
 ## Solution
 
-建立一個批次檔(.bat)，使用 **net start** 語法啟動 Docker Engine，以下範例增加 Log 紀錄啟動時間：
+建立一個批次檔(.bat)，使用 **net start** 語法啟動 **Docker Engine**，以下範例增加 Log 紀錄啟動時間：
 
 ```bat
 echo %DATE% %TIME% START >> c:\Logs\start_docker_engine_server.log
