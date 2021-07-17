@@ -24,3 +24,7 @@
 
 ## Vue.js
 - Vetur
+
+## Develop Tools
+- ngrok for VSCode
+- Remote - WSL <font color=red>(Windows Only)</font>
